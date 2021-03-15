@@ -1,11 +1,13 @@
-﻿<div class="validation-container">
-    <input class="validation-input formm-control" />
-    <div class="valid-tooltip">
+﻿@inherits ValidationInputBase
+
+<div class="validation-container">
+    <input class="validation-input form-control" @onchange="HandleInputChanged" value="@Value" />
+    <div class="val-tooltip">
         !
-        <span class="valid-tooltip"></span>
+        <span class="val-tooltip"></span>
     </div>
 </div>
 
 @code {
-
+  
 }
