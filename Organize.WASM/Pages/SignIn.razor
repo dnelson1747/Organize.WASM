@@ -3,7 +3,7 @@
 
 
 <div class="sign-form">
-    <p class="welcome-text">Hello @UserName - Today is @Day!</p>
+    <p class="welcome-text">Hello @(string.IsNullOrEmpty(UserName) ? "User" : UserName) - Today is @Day!</p>
     <input type="text" class="sign-input form-control" placeholder="Username" @onchange="HandleUserNameChanged" />
     <input type="password" class="sign-input form-control" placeholder="Password" />
 
