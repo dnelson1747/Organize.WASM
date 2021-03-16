@@ -6,12 +6,15 @@
     <p class="welcome-text">Hello @(string.IsNullOrEmpty(User.UserName) ? "User" : User.UserName) - Today is @Day!</p>
 
     <EditForm Model="@User">
-        <DataAnnotationsValidator/>
-        <input type="text" class="sign-input form-control" placeholder="Username" @bind-value="User.UserName" />
-        @*<ValidationInput ValueChangedCallback="HandleUserNameValueChanged" Value="@Username"></ValidationInput>*@
-        <input type="password" class="sign-input form-control" placeholder="Password" @bind-value="User.Password" />
+        <DataAnnotationsValidator />
+        <InputText type="text" class="sign-input form-control" placeholder="Username" @bind-Value="User.UserName" />
+        <ValidationMessage For="@(()=> User.UserName)"></ValidationMessage>
 
-        <ValidationSummary/>
+        @*<ValidationInput ValueChangedCallback="HandleUserNameValueChanged" Value="@Username"></ValidationInput>*@
+        <InputText type="password" class="sign-input form-control" placeholder="Password" @bind-Value="User.Password" />
+        <ValidationMessage For="@(()=> User.Password)"></ValidationMessage>
+
+       
         <button class="sign-button btn btn-primary" type="submit">Sign in</button>
     </EditForm>
 
