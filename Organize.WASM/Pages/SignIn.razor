@@ -5,14 +5,15 @@
 <div class="sign-form">
     <p class="welcome-text">Hello @(string.IsNullOrEmpty(User.UserName) ? "User" : User.UserName) - Today is @Day!</p>
 
-    <EditForm Model="@User">
+    <EditForm EditContext="@EditContext">
         <DataAnnotationsValidator />
-        <InputText type="text" class="sign-input form-control" placeholder="Username" @bind-Value="User.UserName" />
-        <ValidationMessage For="@(()=> User.UserName)"></ValidationMessage>
 
-        @*<ValidationInput ValueChangedCallback="HandleUserNameValueChanged" Value="@Username"></ValidationInput>*@
+        @*<InputText type="text" class="sign-input form-control" placeholder="Username" @bind-Value="User.UserName" />
+        <ValidationMessage For="@(()=> User.UserName)"></ValidationMessage>*@
+
+        <ValidationInput @bind-Value="@User.UserName" Error="@GetError(() => User.UserName)"></ValidationInput>
         <InputText type="password" class="sign-input form-control" placeholder="Password" @bind-Value="User.Password" />
-        <ValidationMessage For="@(()=> User.Password)"></ValidationMessage>
+        <ValidationInput @bind-Value="@User.Password" Error="@GetError(() => User.Password)"></ValidationInput>
 
        
         <button class="sign-button btn btn-primary" type="submit">Sign in</button>

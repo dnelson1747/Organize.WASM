@@ -9,13 +9,16 @@ namespace Organize.WASM.Controls
     public class ValidationInputBase : ComponentBase
     {
         [Parameter]
-        public EventCallback<string> ValueChangedCallback { get; set; }
+        public EventCallback<string> ValueChanged { get; set; }
 
         [Parameter]
         public string Value { get; set; }
+
+        [Parameter]
+        public string Error { get; set; }
         protected async void HandleInputChanged(ChangeEventArgs eventArgs)
         {
-          await ValueChangedCallback.InvokeAsync(eventArgs.Value.ToString());
+          await ValueChanged.InvokeAsync(eventArgs.Value.ToString());
         }
     }
 }
