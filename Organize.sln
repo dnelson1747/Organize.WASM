@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Organize.DataAccess", "Orga
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Organize.Shared", "Organize.Shared\Organize.Shared.csproj", "{80143782-DB62-42F2-866F-C41EF3EC1965}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralUI", "GeneralUI\GeneralUI.csproj", "{423A7CF5-FBE4-400B-9B2B-DB9E40BE71DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeneralUI", "GeneralUI\GeneralUI.csproj", "{423A7CF5-FBE4-400B-9B2B-DB9E40BE71DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
