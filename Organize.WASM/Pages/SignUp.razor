@@ -7,7 +7,7 @@
 
         <div class="sign-validation">
             <ValidationInput @bind-Value="User.UserName"
-                             placeholder="Username" 
+                             placeholder="Username"
                              Error=@GetError(() => User.UserName) />
         </div>
 
@@ -35,7 +35,19 @@
                              Error=@GetError(() => User.PhoneNumber) />
         </div>
 
-        <button class="sign-button btn btn-primary" type="submit">Sign Up</button>
+        <div class="sign-validation">
+            <Dropdown
+                      TValue="Organize.Shared.Enums.GenderTypeEnum"
+                      @bind-SelectedItem="@SelectedGenderTypedropdownItem"
+                      SelectableItems="@GenderTypeDropdownItems">
+
+            </Dropdown>
+
+
+        </div>
+
+
+            <button class="sign-button btn btn-primary" type="submit">Sign Up</button>
 
     </EditForm>
 

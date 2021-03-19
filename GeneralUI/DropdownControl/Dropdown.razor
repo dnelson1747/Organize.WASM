@@ -8,7 +8,7 @@
             data-toggle="dropdown" 
             aria-haspopup="true"
             aria-expanded="false">
-    @SelectedItem  
+    @(SelectedItem == null ? "Please select something" : SelectedItem.DisplayText)  
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         @foreach(var item in SelectableItems)
